@@ -1,6 +1,47 @@
 ## AutoSavForm - Documentation ##
+   
+<br> **AutoSavForm** is a jQuery Plugin who save form data in localStorage automatically.
+### Usage ###
 
-TODO
+<br/><strong>Automatic </strong>(Data are save in realTime.)
+```
+$.AutoSaveForm(formSelector);
+```
+<br/>
+<strong>Manual </strong>(Data will be save when user click on element)
+```
+$.AutoSaveForm(formSelector, clickElementSelector);
+```
+
+### Parameters ###
+<br/> `formSelector` : Selector of form
+
+`clickElementSelector` (optional) : Selector of click element
+
+### Supported Input ###
+
+-  button
+-  checkbox
+-  color
+-  date 
+-  datetime 
+-  datetime-local 
+-  email 
+-  hidden
+-  image
+-  month 
+-  number 
+-  password
+-  radio
+-  range 
+-  reset
+-  search
+-  submit
+-  tel
+-  text
+-  time 
+-  url
+-  week
 
 #License
 Copyright 2013 Thomas Blanc-Hector (http://code4fun.fr)
