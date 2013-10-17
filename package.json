@@ -5,7 +5,7 @@
         "author": "Thomas Blanc-Hector",
         "repository": {
                 "type" : "git",
-                "url" : ""
+                "url" : "https://github.com/code4funFr/AutoSaveForm.git"
         },
         "homepage": "",
         "version": "0.0.1",
