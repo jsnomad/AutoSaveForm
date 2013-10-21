@@ -22,8 +22,7 @@
 		base.init = function () {
 			base._getData();
 			isManualMode = base._isManualMode();
-
-			base.$el.children("input").each(function (index) {
+			$(base.el+ " input").each(function (index) {
 				var type = $(this).attr("type");
 				base._initEventInputChange(this, index, type);
 				base._initInputValue(index, type);
@@ -80,17 +79,17 @@
 		base._updateUI = function (index, data, type) {
 			switch (base._getTypeCategory(type)) {
 				case "text":
-				base.$el.children("input").eq(index).val(data);
+				$(base.el+ " input").eq(index).val(data);
 				break;
 				case "checkOrRadio":
-				base.$el.children("input").eq(index).attr("checked", data);
+				$(base.el+ " input").eq(index).attr("checked", data);
 				break;
 			}
 		};
 
 		base._initInputValue = function (index, type) {
 			for (var k in arrayData) {
-				if (k === index) {
+				if (k == index) {
 					base._updateUI(index, arrayData[index], type);
 				}
 			}

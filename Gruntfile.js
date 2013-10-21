@@ -19,9 +19,13 @@ module.exports = function(grunt) {
 		},
 
 		uglify: {
-			my_target: {
+			jqueryAutoSave: {
 				src: ["dist/jquery.autosave.js"],
 				dest: "dist/jquery.autosave.min.js"
+			},
+			jquery: {
+				src: ["src/jquery-2.0.3.min.js"],
+				dest: "dist/jquery-2.0.3.min.js"
 			}
 		}
 	});
