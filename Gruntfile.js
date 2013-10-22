@@ -6,13 +6,13 @@ module.exports = function(grunt) {
 
 		concat: {
 			dist: {
-				src: ["src/jquery.autosave.js"],
-				dest: "dist/jquery.autosave.js"
+				src: ["src/jquery.autosaveform.js"],
+				dest: "dist/jquery.autosaveform.js"
 			}
 		},
 
 		jshint: {
-			files: ["src/jquery.autosave.js"],
+			files: ["src/jquery.autosaveform.js"],
 			options: {
 				jshintrc: ".jshintrc"
 			}
@@ -20,12 +20,23 @@ module.exports = function(grunt) {
 
 		uglify: {
 			jqueryAutoSave: {
-				src: ["dist/jquery.autosave.js"],
-				dest: "dist/jquery.autosave.min.js"
+				src: ["dist/jquery.autosaveform.js"],
+				dest: "dist/jquery.autosaveform.min.js"
+			}
+		},
+
+		cssmin: {
+			combine: {
+				files: {
+					'example/assets/css/style.css': ['example/assets/css/bootstrap.css', 'example/assets/css/custom.css']
+				}
 			},
-			jquery: {
-				src: ["src/jquery-2.0.3.min.js"],
-				dest: "dist/jquery-2.0.3.min.js"
+			minify: {
+				expand: true,
+				cwd: 'example/assets/css/',
+				src: ['style.css', '!*.min.css'],
+				dest: 'example/assets/css/',
+				ext: '.min.css'
 			}
 		}
 	});
@@ -33,8 +44,9 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks("grunt-contrib-concat");
 	grunt.loadNpmTasks("grunt-contrib-jshint");
 	grunt.loadNpmTasks("grunt-contrib-uglify");
+	grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-	grunt.registerTask("default", ["jshint", "concat", "uglify"]);
+	grunt.registerTask("default", ["jshint", "concat", "uglify", "cssmin"]);
 	grunt.registerTask("travis", ["jshint"]);
 
 };
